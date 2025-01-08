@@ -1,5 +1,6 @@
 import { MessageSquare, Globe, Bot, Code, Zap, Lock } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { ChatbotDemo } from "@/components/ChatbotDemo";
 
 export const Services = () => {
   return (
