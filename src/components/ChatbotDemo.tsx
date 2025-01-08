@@ -2,12 +2,15 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { MessageSquare } from "lucide-react";
+import { Textarea } from "@/components/ui/textarea";
 
 export const ChatbotDemo = () => {
   const [messages, setMessages] = useState([
     { text: "Hallo! Hoe kan ik u vandaag helpen?", isBot: true },
   ]);
   const [input, setInput] = useState("");
+  const [customResponse, setCustomResponse] = useState("");
+  const [showCustomInput, setShowCustomInput] = useState(false);
 
   const handleSend = () => {
     if (!input.trim()) return;
@@ -15,17 +18,17 @@ export const ChatbotDemo = () => {
     setMessages([...messages, { text: input, isBot: false }]);
     setInput("");
     
-    // Simulate bot response
     setTimeout(() => {
+      const response = customResponse || "Bedankt voor uw bericht! Een van onze medewerkers zal spoedig contact met u opnemen.";
       setMessages(prev => [...prev, {
-        text: "Bedankt voor uw bericht! Een van onze medewerkers zal spoedig contact met u opnemen.",
+        text: response,
         isBot: true
       }]);
     }, 1000);
   };
 
   return (
-    <div className="max-w-sm mx-auto bg-white rounded-lg shadow-lg" id="chatbot">
+    <div className="max-w-sm mx-auto bg-white rounded-lg shadow-lg">
       <div className="p-4 border-b bg-primary text-white rounded-t-lg">
         <div className="flex items-center gap-2">
           <MessageSquare className="w-5 h-5" />
@@ -44,7 +47,7 @@ export const ChatbotDemo = () => {
             </div>
           ))}
         </div>
-        <div className="p-4 border-t">
+        <div className="p-4 border-t space-y-4">
           <div className="flex gap-2">
             <Input
               value={input}
@@ -54,6 +57,21 @@ export const ChatbotDemo = () => {
             />
             <Button onClick={handleSend}>Verstuur</Button>
           </div>
+          <Button 
+            variant="outline" 
+            onClick={() => setShowCustomInput(!showCustomInput)}
+            className="w-full"
+          >
+            {showCustomInput ? "Verberg Custom Response" : "Toon Custom Response"}
+          </Button>
+          {showCustomInput && (
+            <Textarea
+              value={customResponse}
+              onChange={(e) => setCustomResponse(e.target.value)}
+              placeholder="Voer hier het gewenste antwoord in..."
+              className="w-full"
+            />
+          )}
         </div>
       </div>
     </div>
