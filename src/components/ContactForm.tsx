@@ -8,6 +8,8 @@ export const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    company: "",
+    city: "",
     message: "",
   });
   const { toast } = useToast();
@@ -18,7 +20,7 @@ export const ContactForm = () => {
       title: "Bericht verzonden",
       description: "We nemen zo spoedig mogelijk contact met u op.",
     });
-    setFormData({ name: "", email: "", message: "" });
+    setFormData({ name: "", email: "", company: "", city: "", message: "" });
   };
 
   return (
@@ -40,6 +42,22 @@ export const ContactForm = () => {
               placeholder="E-mail"
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+              required
+            />
+          </div>
+          <div>
+            <Input
+              placeholder="Bedrijfsnaam"
+              value={formData.company}
+              onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+              required
+            />
+          </div>
+          <div>
+            <Input
+              placeholder="Stad"
+              value={formData.city}
+              onChange={(e) => setFormData({ ...formData, city: e.target.value })}
               required
             />
           </div>

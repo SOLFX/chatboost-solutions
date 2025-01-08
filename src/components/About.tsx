@@ -25,21 +25,27 @@ export const About = () => {
         </Card>
 
         <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-          <div className="text-center">
-            <Avatar className="w-32 h-32 mx-auto mb-4">
+          <div className="flex items-center gap-6">
+            <Avatar className="w-32 h-32">
               <AvatarImage src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop" alt="Furkan Eren" />
               <AvatarFallback>FE</AvatarFallback>
             </Avatar>
-            <h3 className="text-2xl font-semibold mb-2">Furkan Eren</h3>
-            <p className="text-gray-600">Medeoprichter & AI Specialist</p>
+            <div className="text-left">
+              <h3 className="text-2xl font-semibold mb-2">Furkan Eren</h3>
+              <p className="text-gray-600">Medeoprichter & AI Specialist</p>
+              <p className="mt-2">Specialist in AI-implementaties en chatbot-ontwikkeling</p>
+            </div>
           </div>
-          <div className="text-center">
-            <Avatar className="w-32 h-32 mx-auto mb-4">
+          <div className="flex items-center gap-6">
+            <Avatar className="w-32 h-32">
               <AvatarImage src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop" alt="Anass Abbouch" />
               <AvatarFallback>AA</AvatarFallback>
             </Avatar>
-            <h3 className="text-2xl font-semibold mb-2">Anass Abbouch</h3>
-            <p className="text-gray-600">Medeoprichter & AI Specialist</p>
+            <div className="text-left">
+              <h3 className="text-2xl font-semibold mb-2">Anass Abbouch</h3>
+              <p className="text-gray-600">Medeoprichter & AI Specialist</p>
+              <p className="mt-2">Expert in machine learning en natuurlijke taalverwerking</p>
+            </div>
           </div>
         </div>
       </div>

@@ -24,6 +24,14 @@ export const ChatbotDemo = () => {
         text: response,
         isBot: true
       }]);
+      
+      // Add promotional message after regular response
+      setTimeout(() => {
+        setMessages(prev => [...prev, {
+          text: "Wilt u ook zo'n intelligente chatbot voor uw bedrijf? Neem contact met ons op en ontdek de mogelijkheden!",
+          isBot: true
+        }]);
+      }, 1000);
     }, 1000);
   };
 

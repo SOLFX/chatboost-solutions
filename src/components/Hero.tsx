@@ -10,7 +10,7 @@ export const Hero = () => {
           initial={{ scale: 0.5, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.8 }}
-          className="text-6xl md:text-8xl font-bold text-primary mb-6"
+          className="text-6xl md:text-8xl font-bold text-primary mb-6 animate-bounce"
         >
           SOLFX
         </motion.h1>
@@ -27,7 +27,7 @@ export const Hero = () => {
           </p>
           <Button 
             size="lg"
-            className="bg-primary hover:bg-primary/90 text-white px-8 py-6 text-lg animate-bounce"
+            className="bg-primary hover:bg-primary/90 text-white px-8 py-6 text-lg"
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
           >
             Neem contact op
