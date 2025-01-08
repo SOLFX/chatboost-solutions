@@ -6,14 +6,9 @@ export const Hero = () => {
     <div className="min-h-[80vh] flex items-center justify-center bg-gradient-to-b from-blue-50 to-white relative overflow-hidden">
       <div className="absolute inset-0 bg-grid-pattern opacity-10" />
       <div className="container px-4 py-16 text-center relative">
-        <motion.h1 
-          initial={{ scale: 0.5, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          className="text-6xl md:text-8xl font-bold text-primary mb-6 animate-bounce"
-        >
+        <h1 className="text-6xl md:text-8xl font-bold text-primary mb-6">
           SOLFX
-        </motion.h1>
+        </h1>
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
