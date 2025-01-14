@@ -1,75 +1,36 @@
-import { MessageSquare, Globe, Bot, Code, Zap, Lock } from "lucide-react";
-import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { ChatbotDemo } from "@/components/ChatbotDemo";
+import { Card } from "@/components/ui/card";
+import { Code2, MessageSquare, Globe } from "lucide-react";
 
 export const Services = () => {
   return (
-    <>
-      <div className="py-20 bg-white" id="development">
-        <div className="container px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Webontwikkeling</h2>
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <Card className="p-6 hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <Code className="w-12 h-12 text-primary mb-4" />
-                <CardTitle className="text-xl mb-3">Custom Websites</CardTitle>
-                <CardDescription>
-                  Professionele websites op maat gemaakt voor uw bedrijf.
-                </CardDescription>
-              </CardHeader>
-            </Card>
-            <Card className="p-6 hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <Zap className="w-12 h-12 text-primary mb-4" />
-                <CardTitle className="text-xl mb-3">Optimalisatie</CardTitle>
-                <CardDescription>
-                  Snelle laadtijden en optimale gebruikerservaring.
-                </CardDescription>
-              </CardHeader>
-            </Card>
-            <Card className="p-6 hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <Lock className="w-12 h-12 text-primary mb-4" />
-                <CardTitle className="text-xl mb-3">Veilig & Betrouwbaar</CardTitle>
-                <CardDescription>
-                  Websites gebouwd met de nieuwste veiligheidsnormen.
-                </CardDescription>
-              </CardHeader>
-            </Card>
-          </div>
+    <section id="chatbot" className="py-16 bg-gray-50">
+      <div className="container mx-auto px-4">
+        <h2 className="text-3xl font-bold text-center mb-2">Onze Diensten</h2>
+        <p className="text-center text-gray-600 mb-12">Met meer dan 12 succesvolle projecten in ons portfolio</p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <Card className="p-6 hover:shadow-lg transition-shadow">
+            <MessageSquare className="w-12 h-12 text-primary mb-4" />
+            <h3 className="text-xl font-semibold mb-2">AI Chatbot</h3>
+            <p className="text-gray-600">
+              Verbeter uw klantenservice met onze op maat gemaakte AI chatbot oplossingen
+            </p>
+          </Card>
+          <Card className="p-6 hover:shadow-lg transition-shadow">
+            <Globe className="w-12 h-12 text-primary mb-4" />
+            <h3 className="text-xl font-semibold mb-2">Website Ontwikkeling</h3>
+            <p className="text-gray-600">
+              Professionele websites die uw bedrijf online laten groeien
+            </p>
+          </Card>
+          <Card className="p-6 hover:shadow-lg transition-shadow">
+            <Code2 className="w-12 h-12 text-primary mb-4" />
+            <h3 className="text-xl font-semibold mb-2">Web Applicaties</h3>
+            <p className="text-gray-600">
+              Custom web applicaties die uw bedrijfsprocessen optimaliseren
+            </p>
+          </Card>
         </div>
       </div>
-
-      <div className="py-20 bg-gray-50" id="chatbot">
-        <div className="container px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">AI Chatbot</h2>
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="space-y-8">
-              <Card className="p-6 hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <Bot className="w-12 h-12 text-primary mb-4" />
-                  <CardTitle className="text-xl mb-3">24/7 Beschikbaar</CardTitle>
-                  <CardDescription>
-                    Onze chatbots zijn altijd beschikbaar om uw klanten te helpen.
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-              <Card className="p-6 hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <MessageSquare className="w-12 h-12 text-primary mb-4" />
-                  <CardTitle className="text-xl mb-3">Persoonlijke Antwoorden</CardTitle>
-                  <CardDescription>
-                    Chatbots die natuurlijk communiceren en persoonlijke antwoorden geven.
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-            </div>
-            <div className="flex items-center justify-center">
-              <ChatbotDemo />
-            </div>
-          </div>
-        </div>
-      </div>
-    </>
+    </section>
   );
 };
