@@ -98,4 +98,43 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  .stars-container {
+    perspective: 500px;
+    transform-style: preserve-3d;
+  }
+
+  .stars, .stars2, .stars3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    animation: starAnimation 50s linear infinite;
+    background-image: 
+      radial-gradient(2px 2px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+      radial-gradient(2px 2px at 40px 70px, #ffffff, rgba(0,0,0,0)),
+      radial-gradient(2px 2px at 50px 160px, #ffffff, rgba(0,0,0,0)),
+      radial-gradient(2px 2px at 90px 40px, #ffffff, rgba(0,0,0,0)),
+      radial-gradient(2px 2px at 130px 80px, #ffffff, rgba(0,0,0,0));
+    background-repeat: repeat;
+    background-size: 200px 200px;
+  }
+
+  .stars2 {
+    animation-delay: -25s;
+  }
+
+  .stars3 {
+    animation-delay: -37.5s;
+  }
+
+  @keyframes starAnimation {
+    from {
+      transform: translateZ(0px);
+    }
+    to {
+      transform: translateZ(-500px);
+    }
+  }
 }

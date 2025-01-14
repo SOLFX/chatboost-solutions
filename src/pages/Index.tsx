@@ -7,6 +7,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { ReviewsSlider } from "@/components/ReviewsSlider";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { AppointmentPlanner } from "@/components/AppointmentPlanner";
+import { Footer } from "@/components/Footer";
 
 const Index = () => {
   return (
@@ -21,6 +22,7 @@ const Index = () => {
       <Packages />
       <About />
       <ContactForm />
+      <Footer />
       <WhatsAppButton />
     </div>
   );
