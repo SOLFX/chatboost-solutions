@@ -1,13 +1,8 @@
 import { Button } from "@/components/ui/button";
-import { MessageSquare } from "lucide-react";
 
 export const Navigation = () => {
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  const openWhatsApp = () => {
-    window.open(`https://wa.me/31686339889`, '_blank');
   };
 
   return (
@@ -21,14 +16,6 @@ export const Navigation = () => {
             <Button variant="ghost" onClick={() => scrollToSection('development')}>Webontwikkeling</Button>
             <Button variant="ghost" onClick={() => scrollToSection('packages')}>Pakketten</Button>
             <Button variant="ghost" onClick={() => scrollToSection('contact')}>Contact</Button>
-            <Button 
-              variant="default"
-              onClick={openWhatsApp}
-              className="bg-green-500 hover:bg-green-600"
-            >
-              <MessageSquare className="mr-2 h-4 w-4" />
-              WhatsApp
-            </Button>
           </div>
         </div>
       </div>

@@ -5,6 +5,7 @@ import { About } from "@/components/About";
 import { Packages } from "@/components/Packages";
 import { ContactForm } from "@/components/ContactForm";
 import { ReviewsSlider } from "@/components/ReviewsSlider";
+import { WhatsAppButton } from "@/components/WhatsAppButton";
 
 const Index = () => {
   return (
@@ -16,6 +17,7 @@ const Index = () => {
       <Packages />
       <About />
       <ContactForm />
+      <WhatsAppButton />
     </div>
   );
 };
