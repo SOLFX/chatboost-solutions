@@ -6,6 +6,7 @@ import { Packages } from "@/components/Packages";
 import { ContactForm } from "@/components/ContactForm";
 import { ReviewsSlider } from "@/components/ReviewsSlider";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
+import { AppointmentPlanner } from "@/components/AppointmentPlanner";
 
 const Index = () => {
   return (
@@ -13,6 +14,9 @@ const Index = () => {
       <Navigation />
       <Hero />
       <Services />
+      <div className="container mx-auto px-4 py-8 text-center">
+        <AppointmentPlanner />
+      </div>
       <ReviewsSlider />
       <Packages />
       <About />
