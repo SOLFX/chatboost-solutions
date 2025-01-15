@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import Chatbot from "./pages/Chatbot";
 import Webontwikkeling from "./pages/Webontwikkeling";
 import Contact from "./pages/Contact";
+import OverOns from "./pages/OverOns";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +22,7 @@ const App = () => (
           <Route path="/chatbot" element={<Chatbot />} />
           <Route path="/webontwikkeling" element={<Webontwikkeling />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/over-ons" element={<OverOns />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

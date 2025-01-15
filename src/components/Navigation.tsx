@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu } from "lucide-react";
 import { useState } from "react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
@@ -18,6 +18,8 @@ export const Navigation = () => {
     setIsOpen(false);
   };
 
+  const buttonClasses = "text-white hover:text-white/90";
+
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-50 shadow-sm">
       <div className="container mx-auto px-4">
@@ -31,25 +33,45 @@ export const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6">
-            <Button variant="ghost" onClick={() => scrollToSection('about')}>
+            <Button 
+              variant="ghost" 
+              className={buttonClasses}
+              onClick={() => handleNavigation("/over-ons")}
+            >
               Over ons
             </Button>
-            <Button variant="ghost" onClick={() => navigate("/chatbot")}>
+            <Button 
+              variant="ghost" 
+              className={buttonClasses}
+              onClick={() => handleNavigation("/chatbot")}
+            >
               Chatbot
             </Button>
-            <Button variant="ghost" onClick={() => navigate("/webontwikkeling")}>
+            <Button 
+              variant="ghost" 
+              className={buttonClasses}
+              onClick={() => handleNavigation("/webontwikkeling")}
+            >
               Webontwikkeling
             </Button>
-            <Button variant="ghost" onClick={() => scrollToSection('packages')}>
+            <Button 
+              variant="ghost" 
+              className={buttonClasses}
+              onClick={() => scrollToSection('packages')}
+            >
               Pakketten
             </Button>
-            <Button variant="ghost" onClick={() => navigate("/contact")}>
+            <Button 
+              variant="ghost" 
+              className={buttonClasses}
+              onClick={() => handleNavigation("/contact")}
+            >
               Contact
             </Button>
           </div>
 
           {/* Mobile Navigation */}
-          <Sheet>
+          <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild className="md:hidden">
               <Button variant="ghost" size="icon">
                 <Menu className="h-6 w-6" />
@@ -59,35 +81,35 @@ export const Navigation = () => {
               <nav className="flex flex-col gap-4">
                 <Button 
                   variant="ghost" 
-                  className="w-full justify-start" 
-                  onClick={() => scrollToSection('about')}
+                  className="w-full justify-start text-white"
+                  onClick={() => handleNavigation("/over-ons")}
                 >
                   Over ons
                 </Button>
                 <Button 
                   variant="ghost" 
-                  className="w-full justify-start" 
+                  className="w-full justify-start text-white"
                   onClick={() => handleNavigation("/chatbot")}
                 >
                   Chatbot
                 </Button>
                 <Button 
                   variant="ghost" 
-                  className="w-full justify-start" 
+                  className="w-full justify-start text-white"
                   onClick={() => handleNavigation("/webontwikkeling")}
                 >
                   Webontwikkeling
                 </Button>
                 <Button 
                   variant="ghost" 
-                  className="w-full justify-start" 
+                  className="w-full justify-start text-white"
                   onClick={() => scrollToSection('packages')}
                 >
                   Pakketten
                 </Button>
                 <Button 
                   variant="ghost" 
-                  className="w-full justify-start" 
+                  className="w-full justify-start text-white"
                   onClick={() => handleNavigation("/contact")}
                 >
                   Contact
