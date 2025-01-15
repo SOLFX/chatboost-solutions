@@ -3,6 +3,7 @@ import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const Webontwikkeling = () => {
   const navigate = useNavigate();
@@ -28,27 +29,49 @@ const Webontwikkeling = () => {
             </p>
           </motion.div>
 
-          {/* Visueel voorbeeld */}
+          {/* Portfolio Voorbeeld */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             className="mb-16"
           >
-            <div className="relative rounded-lg overflow-hidden shadow-2xl">
-              <div className="aspect-w-16 aspect-h-9 bg-gradient-to-br from-primary to-secondary p-8">
-                <div className="absolute inset-0 bg-white/10 backdrop-blur-sm rounded-lg">
-                  <div className="h-full w-full flex flex-col items-center justify-center text-white">
-                    <div className="w-full max-w-md bg-white/20 backdrop-blur-md p-6 rounded-lg">
-                      <div className="h-4 w-3/4 bg-white/40 rounded mb-4"></div>
-                      <div className="h-4 w-1/2 bg-white/40 rounded mb-4"></div>
-                      <div className="h-20 w-full bg-white/30 rounded mb-4"></div>
-                      <div className="h-8 w-32 bg-primary rounded"></div>
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-2xl">Uitgelicht Project: Pairus</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="relative rounded-lg overflow-hidden shadow-2xl">
+                  <img 
+                    src="https://pairus.nl/wp-content/uploads/2023/10/Pairus-Webdesign-Webdevelopment-Branding-Marketing-Reclamebureau-Alkmaar-Amsterdam-Den-Helder-Noord-Holland-Header-1.jpg" 
+                    alt="Pairus Website" 
+                    className="w-full h-auto rounded-lg"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
+                    <div className="p-6 text-white">
+                      <h3 className="text-xl font-semibold mb-2">Pairus - Reclamebureau</h3>
+                      <p className="text-sm opacity-90">
+                        Een modern en dynamisch webdesign voor een toonaangevend reclamebureau. 
+                        Dit project demonstreert onze expertise in het creëren van visueel 
+                        aantrekkelijke en functionele websites.
+                      </p>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
+                <div className="mt-6 space-y-4 text-gray-600">
+                  <p>
+                    Voor Pairus hebben we een website ontwikkeld die hun creatieve expertise 
+                    perfect weerspiegelt. De site combineert:
+                  </p>
+                  <ul className="list-disc list-inside space-y-2 ml-4">
+                    <li>Modern en responsief design</li>
+                    <li>Vloeiende animaties en overgangen</li>
+                    <li>Optimale gebruikerservaring</li>
+                    <li>Snelle laadtijden</li>
+                  </ul>
+                </div>
+              </CardContent>
+            </Card>
           </motion.div>
 
           {/* Call-to-action */}
