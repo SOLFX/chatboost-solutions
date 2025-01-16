@@ -19,17 +19,27 @@ export const Navigation = () => {
   };
 
   const buttonClasses = "text-primary hover:text-primary/90";
+  const blueButtonClasses = "bg-primary text-white hover:bg-primary/90";
 
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-50 shadow-sm">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <span 
-            className="text-2xl font-bold text-primary cursor-pointer" 
-            onClick={() => navigate("/")}
-          >
-            SOLFX
-          </span>
+          <div className="flex items-center gap-6">
+            <span 
+              className="text-2xl font-bold text-primary cursor-pointer" 
+              onClick={() => navigate("/")}
+            >
+              SOLFX
+            </span>
+            <Button 
+              variant="ghost" 
+              className={buttonClasses}
+              onClick={() => handleNavigation("/webshop")}
+            >
+              Webshop
+            </Button>
+          </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6">
