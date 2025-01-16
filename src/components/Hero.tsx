@@ -11,20 +11,12 @@ export const Hero = () => {
       </div>
       <div className="container px-4 py-16 text-center relative z-10">
         <motion.h1 
-          className="text-6xl md:text-8xl font-bold text-white mb-6 flex items-center justify-center"
+          className="text-6xl md:text-8xl font-bold text-white mb-6"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
-          SOLF
-          <motion.span
-            initial={{ rotate: 0 }}
-            animate={{ rotate: 360 }}
-            transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-            className="inline-block"
-          >
-            X
-          </motion.span>
+          SOLFX
         </motion.h1>
         <motion.div
           initial={{ y: 20, opacity: 0 }}

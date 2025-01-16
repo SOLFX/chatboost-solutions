@@ -24,56 +24,65 @@ export const ContactForm = () => {
   };
 
   return (
-    <div className="py-20 bg-white" id="contact">
+    <div className="py-20 bg-gradient-to-b from-white to-gray-50" id="contact">
       <div className="container px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Contact</h2>
-        <form onSubmit={handleSubmit} className="max-w-lg mx-auto space-y-6">
-          <div>
-            <Input
-              placeholder="Naam"
-              value={formData.name}
-              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              required
-            />
-          </div>
-          <div>
-            <Input
-              type="email"
-              placeholder="E-mail"
-              value={formData.email}
-              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              required
-            />
-          </div>
-          <div>
-            <Input
-              placeholder="Bedrijfsnaam"
-              value={formData.company}
-              onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-              required
-            />
-          </div>
-          <div>
-            <Input
-              placeholder="Stad"
-              value={formData.city}
-              onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-              required
-            />
-          </div>
-          <div>
-            <Textarea
-              placeholder="Uw bericht"
-              value={formData.message}
-              onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-              required
-              className="min-h-[150px]"
-            />
-          </div>
-          <Button type="submit" className="w-full bg-primary hover:bg-primary/90">
-            Verstuur
-          </Button>
-        </form>
+        <div className="max-w-lg mx-auto bg-white rounded-lg shadow-lg p-8 relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent pointer-events-none" />
+          <div className="absolute -right-20 -top-20 w-40 h-40 bg-primary/5 rounded-full blur-3xl" />
+          <div className="absolute -left-20 -bottom-20 w-40 h-40 bg-secondary/5 rounded-full blur-3xl" />
+          <form onSubmit={handleSubmit} className="space-y-6 relative">
+            <div>
+              <Input
+                placeholder="Naam"
+                value={formData.name}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                required
+                className="bg-white/50 backdrop-blur-sm"
+              />
+            </div>
+            <div>
+              <Input
+                type="email"
+                placeholder="E-mail"
+                value={formData.email}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                required
+                className="bg-white/50 backdrop-blur-sm"
+              />
+            </div>
+            <div>
+              <Input
+                placeholder="Bedrijfsnaam"
+                value={formData.company}
+                onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                required
+                className="bg-white/50 backdrop-blur-sm"
+              />
+            </div>
+            <div>
+              <Input
+                placeholder="Stad"
+                value={formData.city}
+                onChange={(e) => setFormData({ ...formData, city: e.target.value })}
+                required
+                className="bg-white/50 backdrop-blur-sm"
+              />
+            </div>
+            <div>
+              <Textarea
+                placeholder="Uw bericht"
+                value={formData.message}
+                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                required
+                className="min-h-[150px] bg-white/50 backdrop-blur-sm"
+              />
+            </div>
+            <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-white">
+              Verstuur
+            </Button>
+          </form>
+        </div>
       </div>
     </div>
   );
