@@ -1,61 +1,68 @@
 import { useEffect, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Star } from "lucide-react";
+import { motion } from "framer-motion";
 
 const reviews = [
   {
     company: "TechCorp BV",
-    text: "SOLFX heeft onze klantenservice compleet getransformeerd. De chatbot bespaart ons uren werk.",
+    text: "SOLFX heeft onze online aanwezigheid compleet getransformeerd. De chatbot en website werken perfect samen!",
+    rating: 5
+  },
+  {
+    company: "E-Commerce Plus",
+    text: "Onze webshop draait beter dan ooit. De klantenservice via WhatsApp chatbot is een geweldige toevoeging.",
     rating: 5
   },
   {
     company: "Marketing Pro",
-    text: "Zeer professioneel team dat echt met je meedenkt. De implementatie was vlekkeloos.",
+    text: "Het team van SOLFX denkt echt met je mee. De implementatie was vlekkeloos en het resultaat overtreft onze verwachtingen.",
     rating: 5
   },
   {
     company: "WebShop Plus",
-    text: "Dankzij SOLFX kunnen we 24/7 onze klanten helpen. Een geweldige investering.",
+    text: "Dankzij SOLFX kunnen we 24/7 onze klanten helpen. Een geweldige investering die we iedereen aanraden!",
     rating: 5
   }
 ];
 
 export const ReviewsSlider = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [position, setPosition] = useState(0);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % reviews.length);
-    }, 5000);
+    const interval = setInterval(() => {
+      setPosition(prev => (prev - 1) % (reviews.length * 100));
+    }, 50);
 
-    return () => clearInterval(timer);
+    return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="py-8 bg-gradient-to-r from-blue-50 via-white to-blue-50">
+    <div className="py-8 bg-gradient-to-r from-primary/5 via-white to-primary/5">
       <div className="container px-4">
         <h2 className="text-2xl font-bold text-center mb-6">Wat Zeggen Onze Klanten</h2>
-        <div className="max-w-3xl mx-auto overflow-hidden">
-          <div 
-            className="flex transition-transform duration-500 ease-in-out"
-            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+        <div className="max-w-5xl mx-auto overflow-hidden">
+          <motion.div 
+            className="flex gap-4"
+            style={{
+              transform: `translateX(${position}px)`,
+              transition: 'transform 0.5s linear'
+            }}
           >
-            {reviews.map((review, index) => (
-              <div key={index} className="w-full flex-shrink-0">
-                <Card className="bg-white/80 backdrop-blur mx-2">
-                  <CardContent className="p-4 text-center">
-                    <div className="flex justify-center mb-2">
-                      {[...Array(review.rating)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
-                      ))}
-                    </div>
-                    <p className="text-sm mb-2 italic">"{review.text}"</p>
-                    <p className="text-sm font-semibold text-primary">{review.company}</p>
-                  </CardContent>
-                </Card>
-              </div>
+            {[...reviews, ...reviews].map((review, index) => (
+              <Card key={index} className="min-w-[280px] flex-shrink-0 bg-white/80 backdrop-blur">
+                <CardContent className="p-4 text-center">
+                  <div className="flex justify-center mb-2">
+                    {[...Array(review.rating)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+                    ))}
+                  </div>
+                  <p className="text-sm mb-2 italic">"{review.text}"</p>
+                  <p className="text-sm font-semibold text-primary">{review.company}</p>
+                </CardContent>
+              </Card>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>
