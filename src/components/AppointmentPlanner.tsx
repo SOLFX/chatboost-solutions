@@ -32,7 +32,7 @@ export const AppointmentPlanner = () => {
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
-        <Button className="bg-primary hover:bg-primary/90">
+        <Button className="bg-primary text-white hover:bg-primary/90">
           <CalendarIcon className="mr-2 h-4 w-4" />
           Plan een afspraak
         </Button>

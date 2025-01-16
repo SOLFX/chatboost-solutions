@@ -78,7 +78,7 @@ export const ContactForm = () => {
                 className="min-h-[150px] bg-white/50 backdrop-blur-sm"
               />
             </div>
-            <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-white">
+            <Button type="submit" className="w-full bg-primary text-white hover:bg-primary/90">
               Verstuur
             </Button>
           </form>

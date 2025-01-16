@@ -13,7 +13,6 @@ const Webontwikkeling = () => {
       <Navigation />
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-4xl mx-auto">
-          {/* Informatiesectie */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -29,16 +28,16 @@ const Webontwikkeling = () => {
             </p>
           </motion.div>
 
-          {/* Portfolio Voorbeeld */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="mb-16"
+            className="mb-16 space-y-12"
           >
+            {/* Website Voorbeeld */}
             <Card>
               <CardHeader>
-                <CardTitle className="text-2xl">Uitgelicht Project: Pairus</CardTitle>
+                <CardTitle className="text-2xl">Uitgelicht Project: Pairus Website</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="relative rounded-lg overflow-hidden shadow-2xl">
@@ -49,7 +48,11 @@ const Webontwikkeling = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
                     <div className="p-6 text-white">
-                      <h3 className="text-xl font-semibold mb-2">Pairus - Reclamebureau</h3>
+                      <h3 className="text-xl font-semibold mb-2">
+                        <a href="https://pairus.nl/" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                          Pairus - Reclamebureau Website
+                        </a>
+                      </h3>
                       <p className="text-sm opacity-90">
                         Een modern en dynamisch webdesign voor een toonaangevend reclamebureau. 
                         Dit project demonstreert onze expertise in het creëren van visueel 
@@ -58,17 +61,34 @@ const Webontwikkeling = () => {
                     </div>
                   </div>
                 </div>
-                <div className="mt-6 space-y-4 text-gray-600">
-                  <p>
-                    Voor Pairus hebben we een website ontwikkeld die hun creatieve expertise 
-                    perfect weerspiegelt. De site combineert:
-                  </p>
-                  <ul className="list-disc list-inside space-y-2 ml-4">
-                    <li>Modern en responsief design</li>
-                    <li>Vloeiende animaties en overgangen</li>
-                    <li>Optimale gebruikerservaring</li>
-                    <li>Snelle laadtijden</li>
-                  </ul>
+              </CardContent>
+            </Card>
+
+            {/* Webshop Voorbeeld */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-2xl">Uitgelicht Project: Pairus Webshop</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="relative rounded-lg overflow-hidden shadow-2xl">
+                  <img 
+                    src="/lovable-uploads/2ff66f98-144a-41a7-87d4-a45f7522c724.png" 
+                    alt="Pairus Webshop" 
+                    className="w-full h-auto rounded-lg"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
+                    <div className="p-6 text-white">
+                      <h3 className="text-xl font-semibold mb-2">
+                        <a href="https://pairuswebshop.netlify.app/" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                          Pairus - E-commerce Platform
+                        </a>
+                      </h3>
+                      <p className="text-sm opacity-90">
+                        Een volledig geïntegreerde e-commerce oplossing met een gebruiksvriendelijke interface 
+                        en geavanceerde functionaliteiten voor online verkoop.
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </CardContent>
             </Card>
@@ -83,7 +103,7 @@ const Webontwikkeling = () => {
           >
             <Button 
               size="lg"
-              className="bg-primary hover:bg-primary/90 text-lg"
+              className="bg-primary text-white hover:bg-primary/90 text-lg"
               onClick={() => navigate("/contact")}
             >
               Neem contact met ons op
