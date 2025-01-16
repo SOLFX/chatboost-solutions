@@ -19,7 +19,6 @@ export const Navigation = () => {
   };
 
   const buttonClasses = "text-primary hover:text-primary/90";
-  const blueButtonClasses = "bg-primary text-white hover:bg-primary/90";
 
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-50 shadow-sm">
@@ -32,13 +31,6 @@ export const Navigation = () => {
             >
               SOLFX
             </span>
-            <Button 
-              variant="ghost" 
-              className={buttonClasses}
-              onClick={() => handleNavigation("/webshop")}
-            >
-              Webshop
-            </Button>
           </div>
 
           {/* Desktop Navigation */}
