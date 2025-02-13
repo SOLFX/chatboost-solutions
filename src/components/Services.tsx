@@ -1,3 +1,4 @@
+
 import { Card } from "@/components/ui/card";
 import { Code2, MessageSquare, Globe, ShoppingCart } from "lucide-react";
 import { useNavigate } from "react-router-dom";
@@ -10,7 +11,7 @@ export const Services = () => {
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-2">Onze Diensten</h2>
         <p className="text-center text-gray-600 mb-12">Met meer dan 12 succesvolle projecten in ons portfolio</p>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-16">
           <Card 
             className="p-6 hover:shadow-lg transition-shadow cursor-pointer"
             onClick={() => navigate("/chatbot")}
@@ -48,6 +49,15 @@ export const Services = () => {
               Custom web applicaties die uw bedrijfsprocessen optimaliseren
             </p>
           </Card>
+        </div>
+        
+        {/* New Image Section */}
+        <div className="max-w-2xl mx-auto rounded-lg overflow-hidden shadow-xl">
+          <img 
+            src="/lovable-uploads/ae783738-66db-44ce-8ead-7797aedb4129.png"
+            alt="Service Showcase"
+            className="w-full h-auto object-cover"
+          />
         </div>
       </div>
     </section>
